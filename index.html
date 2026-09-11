@@ -38,14 +38,14 @@ hr{border:0;border-top:2px solid #8cecff;margin:13px 0}.toolbar{display:grid;gri
 <body>
 <div id="passwordModal" class="passwordModal"><div class="passwordCard"><h2>Change Password</h2><p>Set a new password for your current 1PNX account.</p><form id="passwordForm"><label>New Password</label><input id="newPassword" type="password" minlength="6" autocomplete="new-password" required placeholder="Enter new password"><label>Confirm New Password</label><input id="confirmPassword" type="password" minlength="6" autocomplete="new-password" required placeholder="Confirm new password"><div id="passwordError" class="passwordError"></div><div id="passwordSuccess" class="passwordSuccess"></div><div class="passwordActions"><button class="cancelPassBtn" type="button" onclick="closeChangePassword()">Cancel</button><button class="savePassBtn" type="submit" id="savePasswordBtn">Change Password</button></div></form></div></div>
 <div id="loginScreen" class="loginScreen show"><div class="loginCard"><div class="loginBrand"><div class="loginLogo">🔥</div><h1>1PNX PILOTING SERVICES MANAGER</h1><div class="sub">PHOENIX // SECURE ACCOUNT LOGIN</div></div><form id="loginForm">
-<label>Email</label><input id="loginUsername" type="text" autocomplete="username" required placeholder="Enter username">
+<label>Username</label><input id="loginUsername" type="text" autocomplete="username" required placeholder="Enter username">
 <label>Password</label><input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Enter password">
 <button class="loginBtn" type="submit" id="loginBtn">Sign In</button>
 <div id="loginError" class="loginError"></div>
 <div class="authSwitch">Don't have an account? <button type="button" onclick="showRegister()">Register Account</button></div>
 </form>
 <form id="registerForm" class="registerForm">
-<label>Email</label><input id="registerUsername" type="text" autocomplete="email" required placeholder="Enter new username">
+<label>Username</label><input id="registerUsername" type="text" autocomplete="email" required placeholder="Enter new username">
 <label>Password</label><input id="registerPassword" type="password" minlength="6" autocomplete="new-password" required placeholder="At least 6 characters">
 <label>Confirm Password</label><input id="registerConfirm" type="password" minlength="6" autocomplete="new-password" required placeholder="Confirm password">
 <label>Registration Passcode</label><input id="registerPasscode" type="password" autocomplete="off" required placeholder="Enter registration passcode">
@@ -482,14 +482,14 @@ async function registerAccount(username,password,confirm,passcode){
     if(existingError) throw existingError;
     if(existing){ err.textContent='That username is already in use.'; err.classList.add('show'); return; }
 
-    const internalEmail=username+'@1pnx.local';
+    const internalEmail=username+'@1pnx.com';
     const {data,error}=await supabaseClient.auth.signUp({email:internalEmail,password});
     if(error) throw error;
 
     const {error:profileError}=await supabaseClient.from('profiles').insert({id:data.user.id,username});
     if(profileError) throw profileError;
 
-    success.textContent=data.session ? 'Account created successfully. Signing you in...' : 'Account created. You can now sign in with your username.';
+    success.textContent=data.session ? 'Account created successfully. Signing you in...' : 'Account created. If email confirmation is enabled, disable it in Supabase Auth settings, then sign in with your username.';
     success.classList.add('show');
     $('registerForm').reset();
     if(data.session) await loadBookings();
@@ -527,7 +527,7 @@ async function login(username,password){
     if(!profile){ err.textContent='Invalid username or password.'; err.classList.add('show'); return false; }
 
     const {data,error}=await supabaseClient.auth.signInWithPassword({
-      email:username+'@1pnx.local', password
+      email:username+'@1pnx.com', password
     });
     if(error) throw error;
     currentUser=data.user;
