@@ -22,12 +22,14 @@ hr{border:0;border-top:2px solid #8cecff;margin:13px 0}.toolbar{display:grid;gri
 .serviceHint{font-size:9px;color:#55719c;text-transform:none;letter-spacing:0}.serviceGrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.serviceOption{display:flex;align-items:center;gap:5px;margin:0;padding:8px;border:2px solid #73dfff;border-radius:8px;background:#fff;color:#071653;font-size:10px;text-transform:none;letter-spacing:0;cursor:pointer}.serviceOption input{width:auto;margin:0;accent-color:#006cff}.serviceOption:has(input:checked){border-color:#006cff;background:#d8f5ff;box-shadow:0 0 8px #00cfff55}
 .booking{border:2px solid #78ddff;border-radius:10px;padding:9px;margin:6px 0;background:linear-gradient(120deg,#fff,#e1faff);display:grid;grid-template-columns:1fr auto;gap:5px;transition:.18s;box-shadow:0 3px 10px #0078c522;color:#071653}.booking:hover{border-color:#006cff;transform:translateY(-1px)}.booking.passed{background:linear-gradient(120deg,#caffdc,#8cf6a8);border-color:#12bb4a;box-shadow:0 0 12px #16d84b55}.booking strong{font-size:13px}.ign{color:#0876c9;font-size:11px}.pilotType{display:inline-block;margin-top:4px;padding:3px 7px;border-radius:7px;background:linear-gradient(90deg,#008cff,#0060d6);border:1px solid #00dfff;color:#fff;font-size:9px;font-weight:900;text-transform:uppercase}.meta{font-size:10px;color:#55719c;line-height:1.5}.badge{padding:4px 7px;border-radius:16px;font-size:9px;font-weight:900;border:2px solid #fff!important;width:auto}.Pending{background:#8d8d8d;color:#fff}.Ongoing{background:#007cff;color:#fff}.Done{background:#11bd45;color:#fff}.Cancelled{background:#ef174b;color:#fff}.small-actions{display:flex;gap:5px}.small-actions button{width:auto;padding:6px 8px;font-size:9px}.empty{text-align:center;color:#55719c;padding:25px 10px}.foot{font-size:9px;color:#d7faff;text-align:center;padding:4px 18px 20px}
 .reportModal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:16px;background:#00133dcc;backdrop-filter:blur(6px)}.reportModal.show{display:flex}.reportPanel{width:min(1100px,96vw);max-height:90vh;overflow:auto;background:#eafcff;border:3px solid #00d9ff;border-radius:14px;box-shadow:0 0 35px #00d9ffaa;color:#071653}.reportHeader{display:flex;align-items:center;justify-content:space-between;padding:12px 15px;border-bottom:2px solid #00cfff;background:linear-gradient(90deg,#0341a9,#0087ed);position:sticky;top:0;z-index:2}.reportHeader h3{margin:0;font-size:14px;text-transform:uppercase;color:#fff;text-shadow:2px 2px #05226b}.reportClose{width:auto;padding:6px 10px;background:#ed174a;color:#fff;border-color:#ff6688}.reportContent{padding:14px}.reportSummary{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}.reportStat{padding:10px;border:2px solid #00cfff;border-radius:9px;background:linear-gradient(145deg,#fff,#d8f8ff);color:#071653}.reportStat b{display:block;font-size:19px;color:#006cff}.reportStat span{font-size:8px;color:#55719c;text-transform:uppercase}.reportTableWrap{overflow:auto;border:2px solid #00cfff;border-radius:9px}.reportTable{width:100%;border-collapse:collapse;font-size:10px;min-width:850px}.reportTable th,.reportTable td{padding:7px 8px;border-bottom:1px solid #9aeaff;text-align:left}.reportTable th{background:#0752bd;color:#fff;text-transform:uppercase;font-size:8px}.reportTable tbody tr:nth-child(even){background:#e8fbff}.reportTable tbody tr:hover{background:#c9f5ff}.reportEmpty{text-align:center;padding:28px;color:#55719c}
+.loginScreen{position:fixed;inset:0;z-index:5000;display:none;align-items:center;justify-content:center;padding:20px;background:radial-gradient(circle at 20% 10%,#08d8ff 0,#0676dc 24%,#041e62 58%,#020b29 100%)}.loginScreen.show{display:flex}.loginCard{width:min(420px,94vw);background:#eafcff;border:3px solid #00d9ff;border-radius:16px;padding:24px;box-shadow:0 0 35px #00d9ffaa,0 20px 50px #00123faa;color:#071653}.loginBrand{text-align:center;margin-bottom:18px}.loginLogo{width:64px;height:64px;margin:0 auto 10px;border:3px solid #fff;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,#057cff,#08277d);box-shadow:0 0 20px #00d9ff;font-size:30px}.loginBrand h1{color:#071653;text-shadow:none;font-size:18px}.loginBrand .sub{color:#14508a}.loginCard label{margin-top:12px}.loginCard input{padding:12px}.loginBtn{margin-top:16px;padding:12px;background:linear-gradient(135deg,#00d83f,#12a928);border-color:#00a832;color:#fff;text-shadow:1px 1px #07531c}.loginError{display:none;margin-top:10px;padding:9px;border:2px solid #ff6385;border-radius:8px;background:#ffe3ea;color:#b00035;font-size:11px}.loginError.show{display:block}.accountBox{display:flex;align-items:center;gap:8px}.accountEmail{font-size:10px;color:#dffbff;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.logoutBtn{width:auto;padding:7px 9px;font-size:10px;background:#ef174a;border-color:#ff6688;color:#fff}.appHidden{display:none!important}
 @media(max-width:800px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.toolbar{grid-template-columns:1fr}.reportGrid{grid-template-columns:1fr}.reportSummary{grid-template-columns:1fr 1fr}.booking{grid-template-columns:1fr}.small-actions{justify-content:flex-start}}
 </style>
 </head>
 <body>
-<header><div class="wrap top"><div class="logo"><div class="logoMark">🔥</div><div><h1>1PNX PILOTING SERVICES MANAGER</h1><div class="sub">PHOENIX // ONLINE SERVICE CONTROL</div></div></div><div class="live"><i></i><span id="connectionStatus">CONNECTING...</span></div></div></header>
-<main class="wrap">
+<div id="loginScreen" class="loginScreen show"><div class="loginCard"><div class="loginBrand"><div class="loginLogo">🔥</div><h1>1PNX PILOTING SERVICES MANAGER</h1><div class="sub">PHOENIX // SECURE ACCOUNT LOGIN</div></div><form id="loginForm"><label>Email</label><input id="loginEmail" type="email" autocomplete="username" required placeholder="Enter account email"><label>Password</label><input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Enter password"><button class="loginBtn" type="submit" id="loginBtn">Sign In</button><div id="loginError" class="loginError"></div></form></div></div>
+<header id="appHeader" class="appHidden"><div class="wrap top"><div class="logo"><div class="logoMark">🔥</div><div><h1>1PNX PILOTING SERVICES MANAGER</h1><div class="sub">PHOENIX // ONLINE SERVICE CONTROL</div></div></div><div class="accountBox"><div class="live"><i></i><span id="connectionStatus">CONNECTING...</span></div><span id="accountEmail" class="accountEmail"></span><button class="logoutBtn" type="button" onclick="logout()">Logout</button></div></div></header>
+<main id="appMain" class="wrap appHidden">
 <section class="stats">
 <div class="stat"><b id="total">0</b><span>Total bookings</span></div>
 <div class="stat"><b id="today">0</b><span>Today</span></div>
@@ -116,7 +118,7 @@ hr{border:0;border-top:2px solid #8cecff;margin:13px 0}.toolbar{display:grid;gri
     </div>
   </div>
 </div>
-<div class="wrap foot">SAE // ONLINE DATABASE // Bookings are shared across devices through Supabase.</div>
+<div id="appFoot" class="wrap foot appHidden">SAE // ONLINE DATABASE // Each account has its own private booking data.</div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const SUPABASE_URL='https://szjvzbsmkowpqezrvbqo.supabase.co';
@@ -140,7 +142,7 @@ function durationText(b){
 }
 function toDb(b){
   return {
-    id:String(b.id),name:b.name,ign:b.ign||'',
+    id:String(b.id),user_id:currentUser?.id||null,name:b.name,ign:b.ign||'',
     pilot_type:Array.isArray(b.pilotType)?b.pilotType:[b.pilotType||'Speed'],
     game:'SAE',booking_date:b.date,start_time:b.time,
     days:Number(b.days)||0,hours:Number(b.hours)||0,minutes:Number(b.minutes)||0,
@@ -157,9 +159,11 @@ function fromDb(b){
   };
 }
 async function loadBookings(){
+  if(!currentUser)return;
   setConnection('LOADING...');
   const {data,error}=await supabaseClient.from('bookings')
     .select('*')
+    .eq('user_id',currentUser.id)
     .order('booking_date',{ascending:true})
     .order('start_time',{ascending:true});
   if(error){
@@ -271,13 +275,13 @@ function edit(id){
 }
 async function del(id){
   if(!confirm('Delete this booking?'))return;
-  const {error}=await supabaseClient.from('bookings').delete().eq('id',String(id));
+  const {error}=await supabaseClient.from('bookings').delete().eq('id',String(id)).eq('user_id',currentUser.id);
   if(error){alert('Could not delete booking: '+error.message);return}
   bookings=bookings.filter(x=>x.id!==id);
   render();
 }
 async function status(id,s){
-  const {error}=await supabaseClient.from('bookings').update({status:s}).eq('id',String(id));
+  const {error}=await supabaseClient.from('bookings').update({status:s}).eq('id',String(id)).eq('user_id',currentUser.id);
   if(error){alert('Could not update booking status: '+error.message);return}
   bookings=bookings.map(x=>x.id===id?{...x,status:s}:x);
   render();
@@ -385,12 +389,80 @@ async function importData(e){
   e.target.value='';
 }
 
-setDefaultDate();
-if($('reportDate'))$('reportDate').value=new Date().toISOString().slice(0,10);
-document.querySelectorAll('input[name="pilotType"]').forEach((x,i)=>x.checked=i===0);
-updatePreview();
-loadBookings();
-setInterval(loadBookings,30000);
+let currentUser=null;
+
+function showLogin(message=''){
+  $('loginScreen').classList.add('show');
+  $('appHeader').classList.add('appHidden');
+  $('appMain').classList.add('appHidden');
+  $('appFoot').classList.add('appHidden');
+  const err=$('loginError');
+  err.textContent=message;
+  err.classList.toggle('show',!!message);
+  setConnection('LOGIN REQUIRED');
+}
+function showApp(){
+  $('loginScreen').classList.remove('show');
+  $('appHeader').classList.remove('appHidden');
+  $('appMain').classList.remove('appHidden');
+  $('appFoot').classList.remove('appHidden');
+  $('accountEmail').textContent=currentUser?.email||'';
+}
+async function login(email,password){
+  const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});
+  if(error){
+    console.error(error);
+    $('loginError').textContent=error.message||'Login failed.';
+    $('loginError').classList.add('show');
+    return false;
+  }
+  currentUser=data.user;
+  showApp();
+  setDefaultDate();
+  if($('reportDate'))$('reportDate').value=new Date().toISOString().slice(0,10);
+  document.querySelectorAll('input[name="pilotType"]').forEach((x,i)=>x.checked=i===0);
+  updatePreview();
+  await loadBookings();
+  return true;
+}
+$('loginForm').onsubmit=async e=>{
+  e.preventDefault();
+  const btn=$('loginBtn');
+  const err=$('loginError');
+  err.classList.remove('show');
+  btn.disabled=true;btn.textContent='Signing In...';
+  await login($('loginEmail').value.trim(),$('loginPassword').value);
+  btn.disabled=false;btn.textContent='Sign In';
+};
+async function logout(){
+  await supabaseClient.auth.signOut();
+  currentUser=null;bookings=[];render();showLogin();
+  $('loginPassword').value='';
+}
+supabaseClient.auth.onAuthStateChange(async (_event,session)=>{
+  if(session?.user){
+    currentUser=session.user;
+    showApp();
+    setDefaultDate();
+    if($('reportDate'))$('reportDate').value=new Date().toISOString().slice(0,10);
+    document.querySelectorAll('input[name="pilotType"]').forEach((x,i)=>x.checked=i===0);
+    updatePreview();
+    await loadBookings();
+  }else{
+    currentUser=null;bookings=[];showLogin();
+  }
+});
+
+(async()=>{
+  const {data}=await supabaseClient.auth.getSession();
+  if(data.session?.user){
+    currentUser=data.session.user;showApp();setDefaultDate();
+    if($('reportDate'))$('reportDate').value=new Date().toISOString().slice(0,10);
+    document.querySelectorAll('input[name="pilotType"]').forEach((x,i)=>x.checked=i===0);
+    updatePreview();await loadBookings();
+  }else showLogin();
+})();
+setInterval(()=>{if(currentUser)loadBookings();},30000);
 </script>
 </body>
 </html>
