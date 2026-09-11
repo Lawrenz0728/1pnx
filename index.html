@@ -453,6 +453,7 @@ async function registerAccount(username,password,confirm,passcode){
   const err=$('registerError'), success=$('registerSuccess'), btn=$('registerBtn');
   err.classList.remove('show'); success.classList.remove('show');
   username=username.trim().toLowerCase();
+
   if(!/^[a-z0-9_]{3,30}$/.test(username)){
     err.textContent='Username must be 3-30 characters and use only letters, numbers, or underscore.';
     err.classList.add('show'); return;
@@ -469,30 +470,20 @@ async function registerAccount(username,password,confirm,passcode){
     err.textContent='Registration passcode is required.';
     err.classList.add('show'); return;
   }
-  btn.disabled=true; btn.textContent='Checking Passcode...';
+
+  btn.disabled=true; btn.textContent='Creating Account...';
+
   try{
-    const {data:verified,error:verifyError}=await supabaseClient.rpc('verify_registration_passcode',{p_passcode:passcode});
-    if(verifyError) throw verifyError;
-    if(verified!==true){
-      err.textContent='Invalid registration passcode.';
-      err.classList.add('show'); return;
-    }
-    btn.textContent='Creating Account...';
-    const {data:existing,error:existingError}=await supabaseClient.from('profiles').select('id').eq('username',username).maybeSingle();
-    if(existingError) throw existingError;
-    if(existing){ err.textContent='That username is already in use.'; err.classList.add('show'); return; }
-
-    const internalEmail=username+'@1pnx.com';
-    const {data,error}=await supabaseClient.auth.signUp({email:internalEmail,password});
+    const {data,error}=await supabaseClient.functions.invoke('register-user',{
+      body:{username,password,passcode}
+    });
     if(error) throw error;
+    if(!data?.ok) throw new Error(data?.message||'Unable to create account.');
 
-    const {error:profileError}=await supabaseClient.from('profiles').insert({id:data.user.id,username});
-    if(profileError) throw profileError;
-
-    success.textContent=data.session ? 'Account created successfully. Signing you in...' : 'Account created. If email confirmation is enabled, disable it in Supabase Auth settings, then sign in with your username.';
+    success.textContent='Account created successfully. You can now sign in with your username.';
     success.classList.add('show');
     $('registerForm').reset();
-    if(data.session) await loadBookings();
+    showLogin();
   }catch(error){
     console.error(error);
     err.textContent=error.message||'Unable to create account.';
@@ -516,20 +507,20 @@ async function login(username,password){
   const err=$('loginError'), btn=$('loginBtn');
   err.classList.remove('show');
   username=username.trim().toLowerCase();
+
   if(!/^[a-z0-9_]{3,30}$/.test(username)){
     err.textContent='Enter a valid username.';
     err.classList.add('show'); return false;
   }
+
   btn.disabled=true; btn.textContent='Signing In...';
   try{
-    const {data:profile,error:profileError}=await supabaseClient.from('profiles').select('username').eq('username',username).maybeSingle();
-    if(profileError) throw profileError;
-    if(!profile){ err.textContent='Invalid username or password.'; err.classList.add('show'); return false; }
-
     const {data,error}=await supabaseClient.auth.signInWithPassword({
-      email:username+'@1pnx.com', password
+      email:username+'@1pnx.com',
+      password
     });
     if(error) throw error;
+
     currentUser=data.user;
     showApp();
     setDefaultDate();
