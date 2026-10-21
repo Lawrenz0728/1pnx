@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1833">
+<title>You're Invited | SkaiRen Day</title>
+<style>
+:root{--pink:#f58ac4;--blue:#48cfff;--navy:#0b1833;--paper:#fffafc;--ink:#28324b}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:28px 14px;background:radial-gradient(circle at 15% 10%,#552c64 0,transparent 30%),radial-gradient(circle at 90% 30%,#17486a 0,transparent 30%),#071329;font-family:Georgia,'Times New Roman',serif;display:flex;justify-content:center;align-items:center;color:var(--ink);overflow-x:hidden}
+.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden}.petal{position:absolute;top:-50px;color:#f58ac4;text-shadow:0 0 12px #f58ac477;animation:fall linear infinite}@keyframes fall{to{transform:translate(60px,110vh) rotate(400deg)}}
+.letter{position:relative;width:min(760px,100%);background:var(--paper);padding:clamp(28px,6vw,62px);border-radius:4px;box-shadow:0 25px 90px #0008;overflow:hidden}
+.letter:before{content:"";position:absolute;inset:12px;border:1px solid #f58ac488;pointer-events:none}.letter:after{content:"";position:absolute;inset:18px;border:1px solid #48cfff66;pointer-events:none}
+.top{text-align:center;position:relative;z-index:1}.ornament{font-size:28px;color:#db67a5;letter-spacing:.5em}.eyebrow{font:700 11px/1.5 system-ui,sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#377da2;margin-top:10px}
+h1{font-size:clamp(2.6rem,8vw,5.1rem);line-height:.98;margin:14px 0 8px;color:#17264b;font-weight:normal;letter-spacing:-.04em}h1 span{font-style:italic;color:#d65b9e}.subtitle{font-size:1.15rem;color:#54718c;font-style:italic}
+.rule{display:flex;align-items:center;gap:14px;margin:28px 0;color:#d65b9e}.rule:before,.rule:after{content:"";height:1px;background:linear-gradient(90deg,transparent,#54bde1);flex:1}.rule:after{background:linear-gradient(90deg,#54bde1,transparent)}
+.letter-body{font-size:clamp(1.02rem,2.5vw,1.18rem);line-height:1.95;text-align:center;position:relative;z-index:1}.letter-body p{margin:0 0 17px}.event{margin:25px auto;padding:20px 14px;border-top:1px solid #e5b7d1;border-bottom:1px solid #a8dcec;max-width:470px}.event strong{display:block;font-size:1.35rem;color:#17264b;margin:5px 0}.event small{display:block;font:700 .75rem system-ui,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:#377da2}
+.dress{margin:23px auto 0;padding:15px 10px;background:linear-gradient(100deg,#fce5f2,#e2f7ff);border-radius:3px;max-width:440px}.dress b{display:block;font:700 .72rem system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#387a9d}.dress span{display:block;font-size:1.2rem;color:#b83d82;margin-top:6px}
+.bottom{text-align:center;margin-top:28px;position:relative;z-index:1}.bottom p{font-style:italic;color:#54718c}.btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:999px;padding:12px 18px;font:700 .82rem system-ui,sans-serif;cursor:pointer;text-decoration:none;background:#17264b;color:#fff;box-shadow:0 5px 16px #17264b22}.btn.alt{background:#d95e9f}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.rsvp{display:none;margin:22px auto 0;max-width:440px;text-align:left;background:#f6f9fc;border:1px solid #b9e4f1;padding:18px}.rsvp.show{display:block}label{display:block;font:700 .82rem system-ui,sans-serif;margin:10px 0 5px;color:#315c78}input,select,textarea{width:100%;padding:11px;border:1px solid #c6d8e4;border-radius:6px;background:#fff;font:inherit;color:#28324b}.footer{margin-top:28px;text-align:center;font:11px system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#7591a6}
+@media(max-width:480px){body{padding:10px}.letter{padding:30px 24px}.letter:before{inset:8px}.letter:after{inset:13px}.ornament{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.petal{animation:none}}
+</style>
+</head>
+<body>
+<div class="petals" aria-hidden="true"><span class="petal" style="left:6%;animation-duration:15s;font-size:20px">✿</span><span class="petal" style="left:22%;animation-duration:19s;animation-delay:-8s;font-size:14px">✿</span><span class="petal" style="left:46%;animation-duration:17s;animation-delay:-4s;font-size:18px">✿</span><span class="petal" style="left:70%;animation-duration:21s;animation-delay:-12s;font-size:16px">✿</span><span class="petal" style="left:90%;animation-duration:16s;animation-delay:-6s;font-size:22px">✿</span></div>
+<main class="letter">
+  <header class="top">
+    <div class="ornament">✿ ❀ ✿</div>
+    <div class="eyebrow">A special invitation</div>
+    <h1>SkaiRen <span>Day</span></h1>
+    <div class="subtitle">An evening of friendship, fun &amp; pickleball</div>
+  </header>
+  <div class="rule">✧</div>
+  <section class="letter-body">
+    <p>Dear Friend,</p>
+    <p>With joy and excitement, we would love for you to join us for <strong>SkaiRen Day</strong> — a special evening filled with good vibes, friendly rallies, and wonderful memories.</p>
+    <p>Your presence will make the night even more memorable. Come ready to enjoy the game, share a few laughs, and celebrate with us beneath the lights.</p>
+    <div class="event">
+      <small>You are warmly invited to</small>
+      <strong>Paddle Bay Court</strong>
+      <small>Wednesday · October 28, 2026</small>
+      <strong>8:00 PM – 11:00 PM</strong>
+    </div>
+    <div class="dress"><b>Dress code</b><span>Wear Pink or Blue!</span></div>
+    <p style="margin-top:24px">We hope to see you there!</p>
+  </section>
+  <footer class="bottom">
+    <p>With warm wishes,</p>
+    <div class="ornament">✿ SkaiRen Day ✿</div>
+    <div class="btns">
+      <button class="btn alt" id="calendarBtn" type="button">Add to calendar</button>
+    </div>
+    <div class="footer">Sakura Pink × Tech Blue · October 28, 2026</div>
+  </footer>
+</main>
+<script>
+document.getElementById('calendarBtn').addEventListener('click',()=>{const ics=`BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//SkaiRen Day//Invitation//EN\nBEGIN:VEVENT\nUID:skairen-day-20261028@example.invalid\nDTSTAMP:20261021T000000Z\nDTSTART:20261028T120000Z\nDTEND:20261028T150000Z\nSUMMARY:SkaiRen Day\nLOCATION:Paddle Bay Court\nDESCRIPTION:SkaiRen Day. Dress code: Wear Pink or Blue!\nEND:VEVENT\nEND:VCALENDAR`;const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='SkaiRen-Day.ics';a.click();URL.revokeObjectURL(a.href)});
+</script>
+</body></html>
